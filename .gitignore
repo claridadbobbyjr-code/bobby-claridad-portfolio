@@ -1,0 +1,14 @@
+node_modules
+dist
+test-results
+playwright-report
+.env
+.taste-skill
+*.log
+
+# Raw source material (unblurred client screenshots, originals) — the site uses processed copies in public/
+assests/
+Bobby_Claridad_Resume_ATS_Compatible.pdf
+SKILL.md
+CLAUDE (1).md
+tsconfig.tsbuildinfo
