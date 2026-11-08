@@ -5,7 +5,7 @@ export type Theme = 'dark' | 'light';
 export const THEME_KEY = 'theme';
 const THEME_COLOR: Record<Theme, string> = { dark: '#000000', light: '#fafafa' };
 
-/** The theme index.html applied before first paint (night by default). */
+/** The theme index.html applied before first paint (day by default; night if the visitor chose it). */
 export function currentTheme(): Theme {
   return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
 }

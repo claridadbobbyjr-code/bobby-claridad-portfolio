@@ -142,7 +142,7 @@ function RevenueBars() {
                 style={{
                   background: b.offer
                     ? 'linear-gradient(90deg, hsl(32 70% 25%), hsl(36 100% 64%))'
-                    : 'linear-gradient(90deg, hsl(355 65% 30%), hsl(var(--primary)))',
+                    : 'linear-gradient(90deg, hsl(var(--primary) / 0.45), hsl(var(--primary)))',
                   boxShadow: b.offer ? '0 0 10px hsl(36 100% 64% / 0.3)' : '0 0 10px hsl(var(--primary) / 0.35)',
                 }}
                 initial={reduced ? false : { width: 0 }}

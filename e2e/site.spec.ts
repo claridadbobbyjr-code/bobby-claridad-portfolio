@@ -150,23 +150,26 @@ test.describe('navbar and day mode', () => {
     await expect.poll(async () => (await header.boundingBox())!.y, { timeout: 8000 }).toBeGreaterThanOrEqual(-1);
   });
 
-  test('day mode toggles, survives a reload and toggles back', async ({ page }) => {
+  test('opens in day mode; night mode toggles, survives a reload and toggles back', async ({ page }) => {
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(e.message));
     await page.goto('/');
     const bg = () => page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-    await expect.poll(bg, { timeout: 5000 }).toBe('rgb(0, 0, 0)');
-    await page.getByRole('button', { name: 'Switch to day mode' }).click();
-    await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
-    await expect.poll(bg, { timeout: 3000 }).toBe('rgb(250, 250, 250)');
-    await page.reload();
+    // first visit: white theme
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
     await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#fafafa');
+    await expect.poll(bg, { timeout: 5000 }).toBe('rgb(250, 250, 250)');
     // mock app windows stay dark in day mode
     const code = page.getByTestId('liquid-code');
     await expect.poll(() => code.evaluate((el) => getComputedStyle(el).color), { timeout: 5000 }).toBe('rgb(250, 250, 250)');
     await page.getByRole('button', { name: 'Switch to night mode' }).click();
     await expect(page.locator('html')).not.toHaveAttribute('data-theme', 'light');
+    await expect.poll(bg, { timeout: 3000 }).toBe('rgb(0, 0, 0)');
+    await page.reload();
+    await expect(page.locator('html')).not.toHaveAttribute('data-theme', 'light');
+    await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#000000');
+    await page.getByRole('button', { name: 'Switch to day mode' }).click();
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
     expect(errors).toEqual([]);
   });
 });

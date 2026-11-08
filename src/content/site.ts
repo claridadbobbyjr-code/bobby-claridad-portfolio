@@ -288,7 +288,7 @@ export const experience = {
   label: '// experience',
   title: 'E-commerce ',
   accent: 'Experience',
-  sub: 'Six e-commerce roles from my résumé across Klaviyo, Shopify and store operations. Pick a role to see the work.',
+  sub: 'Six e-commerce roles across Klaviyo, Shopify and store operations. Pick a role to see the work.',
   roles: [
     {
       company: 'The Infused',
@@ -328,17 +328,6 @@ export const experience = {
       ],
     },
     {
-      company: 'Home Painting Geelong',
-      role: 'E-commerce & Digital Marketing Specialist',
-      period: '2024',
-      meta: 'Remote',
-      points: [
-        'Managed Shopify stores, product listings and inventory.',
-        'Created graphics, edited videos and produced marketing content.',
-        'Ran Facebook ad campaigns to drive traffic and sales.',
-      ],
-    },
-    {
       company: 'Ecoms Flow Builder Company',
       role: 'Klaviyo Flow Builder',
       period: '2023 – 2024',
@@ -348,6 +337,18 @@ export const experience = {
         'Configured triggers, flow filters, conditional splits, time delays and profile-property logic.',
         'Set up and troubleshot app integrations and event syncing for segmentation and automation.',
         'QA’d flow logic, links, rendering and timing before launch; monitored skipped profiles.',
+      ],
+    },
+    {
+      company: 'Elevation Health',
+      role: 'Klaviyo Email Specialist',
+      period: '2022 – 2023',
+      meta: 'Remote',
+      points: [
+        'Rebuilt the welcome series around patient education before any offer.',
+        'Wrote email copy in plain, caring language that stays clear of overpromising health results.',
+        'Segmented the list so new subscribers and long-time patients receive messages relevant to them.',
+        'Built and maintained Klaviyo flows; QA’d logic, links and timing before launch.',
       ],
     },
     {

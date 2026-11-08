@@ -57,13 +57,14 @@ describe('content', () => {
     expect(screen.getByRole('heading', { name: profile.name })).toBeInTheDocument();
   });
 
-  it('lists only the e-commerce résumé roles as experience tabs', () => {
+  it('lists only the e-commerce roles as experience tabs', () => {
     render(<App />);
     const tabs = within(screen.getByRole('tablist', { name: 'Roles' })).getAllByRole('tab');
     expect(tabs).toHaveLength(6);
     expect(tabs[0]).toHaveTextContent('The Infused');
     expect(tabs[5]).toHaveTextContent('IMTC-Ecom');
-    for (const t of tabs) expect(t).not.toHaveTextContent(/Amply Supply|GoHighLevel|Realtor/);
+    for (const t of tabs) expect(t).not.toHaveTextContent(/Amply Supply|GoHighLevel|Realtor|Home Painting Geelong/);
+    expect(tabs[4]).toHaveTextContent('Elevation Health');
   });
 
   it('stays on Shopify and Klaviyo: no CRM or AI-automation pitch', () => {

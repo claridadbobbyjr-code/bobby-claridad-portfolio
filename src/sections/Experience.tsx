@@ -48,7 +48,7 @@ export function Experience() {
         >
           <div className="flex items-center gap-3 border-b border-border/60 bg-[hsl(var(--panel-2)/0.9)] px-4 py-3" aria-hidden="true">
             <div className="flex gap-1.5">
-              <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+              <span className="h-3 w-3 rounded-full bg-[#F74918]" />
               <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
               <span className="h-3 w-3 rounded-full bg-[#28c840]" />
             </div>

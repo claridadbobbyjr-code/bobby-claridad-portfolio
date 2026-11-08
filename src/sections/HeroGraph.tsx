@@ -67,9 +67,9 @@ export function HeroGraph() {
         <svg viewBox={`0 0 ${VW} ${VH}`} className="absolute inset-0 h-full w-full overflow-visible" fill="none" aria-hidden="true">
           <defs>
             <linearGradient id="wf-line" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2={VW} y2={VH}>
-              <stop offset="0%" stopColor="hsl(0 84% 58%)" />
-              <stop offset="50%" stopColor="hsl(0 92% 68%)" />
-              <stop offset="100%" stopColor="hsl(350 80% 56%)" />
+              <stop offset="0%" stopColor="#F74918" />
+              <stop offset="50%" stopColor="#FA7A55" />
+              <stop offset="100%" stopColor="#F74918" />
             </linearGradient>
             <filter id="wf-bloom" x="-60%" y="-60%" width="220%" height="220%">
               <feGaussianBlur stdDeviation="5" />
@@ -83,7 +83,7 @@ export function HeroGraph() {
             const draw = { initial: { pathLength: 0 }, animate: { pathLength: 1 }, transition: t };
             return (
               <g key={`${e.from}-${e.to}`}>
-                <motion.path d={e.d} stroke="hsl(0 84% 58%)" strokeWidth="12" strokeLinecap="round" opacity="0.18" filter="url(#wf-bloom)" {...draw} />
+                <motion.path d={e.d} stroke="#F74918" strokeWidth="12" strokeLinecap="round" opacity="0.18" filter="url(#wf-bloom)" {...draw} />
                 <motion.path d={e.d} stroke="hsl(0 0% 3%)" strokeWidth="6.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" {...draw} />
                 <motion.path d={e.d} stroke="url(#wf-line)" strokeWidth="4.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.95" {...draw} />
                 <motion.path d={e.d} stroke="#fff" strokeWidth="1.1" strokeLinecap="round" opacity="0.5" transform="translate(0,-1)" {...draw} />
@@ -92,7 +92,7 @@ export function HeroGraph() {
                     <path d={e.d} stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeDasharray="5 26" opacity="0.35">
                       <animate attributeName="stroke-dashoffset" from="62" to="0" dur={`${e.dur * 1.6}s`} begin={`${1.4 + e.begin}s`} repeatCount="indefinite" />
                     </path>
-                    <circle r="7.5" fill="hsl(0 84% 58%)" opacity="0.16" filter="url(#wf-softbloom)">
+                    <circle r="7.5" fill="#F74918" opacity="0.16" filter="url(#wf-softbloom)">
                       <animateMotion dur={`${e.dur}s`} begin={`${1.5 + e.begin}s`} repeatCount="indefinite" path={e.d} />
                     </circle>
                     <circle r="2.4" fill="#fff" opacity="0.95">
@@ -108,9 +108,9 @@ export function HeroGraph() {
                     transition={{ duration: 0.4, delay: reduced ? 0 : 1.3 + i * 0.12 }}
                     style={{ transformOrigin: `${p.x}px ${p.y}px` }}
                   >
-                    <circle cx={p.x} cy={p.y} r="8.5" fill="hsl(350 80% 56%)" opacity="0.22" filter="url(#wf-softbloom)" />
-                    <circle cx={p.x} cy={p.y} r="5.4" fill="hsl(0 0% 3%)" stroke="hsl(350 80% 56% / 0.7)" strokeWidth="0.9" />
-                    <circle cx={p.x} cy={p.y} r="3.1" fill="hsl(350 80% 56%)" />
+                    <circle cx={p.x} cy={p.y} r="8.5" fill="#F74918" opacity="0.22" filter="url(#wf-softbloom)" />
+                    <circle cx={p.x} cy={p.y} r="5.4" fill="hsl(0 0% 3%)" stroke="rgb(247 73 24 / 0.7)" strokeWidth="0.9" />
+                    <circle cx={p.x} cy={p.y} r="3.1" fill="#F74918" />
                     <circle cx={p.x - 1} cy={p.y - 1} r="1.05" fill="#fff" opacity="0.9" />
                   </motion.g>
                 ))}

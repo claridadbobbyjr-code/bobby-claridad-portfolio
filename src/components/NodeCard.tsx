@@ -11,7 +11,7 @@ export function NodeCard({ children }: { children: ReactNode }) {
         aria-hidden="true"
         className="absolute inset-0 translate-x-[6px] translate-y-[7px] rounded-xl border border-hairline/5"
         style={{
-          background: 'linear-gradient(135deg, hsl(var(--primary) / 0.22), hsl(0 60% 14% / 0.35))',
+          background: 'linear-gradient(135deg, hsl(var(--primary) / 0.22), hsl(13.2 93.3% 53.1% / 0.1))',
           boxShadow: 'inset 0 -1px 0 hsl(var(--accent) / 0.5), 0 6px 18px hsl(var(--primary) / 0.18)',
         }}
       />

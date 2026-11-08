@@ -16,7 +16,7 @@ function Portrait() {
   return (
     <div
       className="force-dark relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden rounded-xl"
-      style={{ background: 'radial-gradient(80% 60% at 50% 35%, hsl(0 70% 20% / 0.9), hsl(0 0% 6%) 70%)' }}
+      style={{ background: 'radial-gradient(80% 60% at 50% 35%, hsl(13.2 93.3% 53.1% / 0.3), hsl(0 0% 6%) 70%)' }}
       role="img"
       aria-label={`${profile.name} monogram`}
     >
