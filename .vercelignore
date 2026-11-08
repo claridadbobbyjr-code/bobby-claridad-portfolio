@@ -1,0 +1,15 @@
+# Keep raw source material and local build/test output out of Vercel uploads (mirrors .gitignore)
+assests/
+Bobby_Claridad_Resume_ATS_Compatible.pdf
+SKILL.md
+CLAUDE (1).md
+node_modules
+dist
+test-results
+playwright-report
+tsconfig.tsbuildinfo
+.env
+*.log
+.env.local
+.env*.local
+.vercel

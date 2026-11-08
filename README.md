@@ -66,7 +66,10 @@ npx playwright install chromium && PW_CHANNEL=chromium npm run test:e2e   # bund
 
 ## Deployment
 
-**Live site:** https://claridadbobbyjr-code.github.io/bobby-claridad-portfolio/ (GitHub Pages, served from the `gh-pages` branch).
+**Live sites:**
+
+- **Vercel:** https://bobby-claridad-portfolio.vercel.app (project `bobby-claridad-portfolio`). Publish with `npx vercel deploy --prod`; `.vercelignore` keeps raw files out of the upload.
+- **GitHub Pages:** https://claridadbobbyjr-code.github.io/bobby-claridad-portfolio/ (served from the `gh-pages` branch), published with `npm run deploy` as below.
 
 To publish changes: commit and push to `main`, then run
 

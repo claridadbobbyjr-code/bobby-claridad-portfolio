@@ -12,3 +12,6 @@ Bobby_Claridad_Resume_ATS_Compatible.pdf
 SKILL.md
 CLAUDE (1).md
 tsconfig.tsbuildinfo
+
+.vercel
+.env*
