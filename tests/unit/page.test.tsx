@@ -57,19 +57,20 @@ describe('content', () => {
     expect(screen.getByRole('heading', { name: profile.name })).toBeInTheDocument();
   });
 
-  it('lists only the e-commerce roles as experience tabs', () => {
+  it('lists the roles from the résumé, newest first', () => {
     render(<App />);
     const tabs = within(screen.getByRole('tablist', { name: 'Roles' })).getAllByRole('tab');
-    expect(tabs).toHaveLength(6);
-    expect(tabs[0]).toHaveTextContent('The Infused');
-    expect(tabs[5]).toHaveTextContent('IMTC-Ecom');
-    for (const t of tabs) expect(t).not.toHaveTextContent(/Amply Supply|GoHighLevel|Realtor|Home Painting Geelong/);
-    expect(tabs[4]).toHaveTextContent('Elevation Health');
+    const companies = ['The Infused', 'Home Painting Geelong', 'Embeholdings', 'Confident Health', 'Hundredfolds', 'Ecoms Flow Builder Company', 'StoneSystem', 'Realtor Web Builder'];
+    expect(tabs).toHaveLength(companies.length);
+    companies.forEach((c, i) => expect(tabs[i]).toHaveTextContent(c));
+    for (const t of tabs) expect(t).not.toHaveTextContent(/Elevation Health|IMTC-Ecom|Amply Supply/);
   });
 
-  it('stays on Shopify and Klaviyo: no CRM or AI-automation pitch', () => {
+  it('stays on Shopify and Klaviyo: no CRM or AI-automation pitch outside the work history', () => {
     const { container } = render(<App />);
-    const text = container.textContent ?? '';
+    const pitch = container.cloneNode(true) as HTMLElement;
+    pitch.querySelector('#experience')?.remove(); // past CRM roles are listed there as résumé facts
+    const text = pitch.textContent ?? '';
     for (const off of ['GoHighLevel', 'n8n', 'AI Agent', 'AI Automation']) expect(text).not.toContain(off);
     for (const on of ['Liquid', 'GemPages', 'PageFly', 'Shogun', 'Replo', 'A/B', 'Segments', 'Rewards', 'Email Design']) {
       expect(text, on).toContain(on);

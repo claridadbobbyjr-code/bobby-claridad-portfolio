@@ -240,7 +240,7 @@ test.describe('animations', () => {
     await page.goto('/');
     const graph = page.getByTestId('hero-graph');
     await expect(graph).toBeVisible();
-    for (const v of ['4+', '6', '5+']) await expect(graph.locator('[aria-hidden="true"]', { hasText: new RegExp(`^${v.replace('+', '\\+')}$`) }).first()).toBeVisible();
+    for (const v of ['5+', '5', '5+']) await expect(graph.locator('[aria-hidden="true"]', { hasText: new RegExp(`^${v.replace('+', '\\+')}$`) }).first()).toBeVisible();
     await expect(graph.locator('path[stroke="url(#wf-line)"]')).toHaveCount(6);
   });
 
